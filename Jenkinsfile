@@ -6,6 +6,11 @@ stages {
     sh 'git clone https://github.com/Paramesh0123/web-project.git'
   }
   }
+  stage('build') {
+  steps {
+    sh 'mvn clean install'
+  }
+  }
 }
 }
   
