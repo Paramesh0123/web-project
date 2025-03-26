@@ -2,14 +2,14 @@ pipeline {
 agent any 
 stages {
   stage('checkout') {
-  steps { 
-    sh 'git pull https://github.com/Paramesh0123/web-project.git'
-  }
+    steps { 
+      git credentialsId: 'git_credentials', url: 'https://github.com/Paramesh0123/web-project.git'
+    }
   }
   stage('build') {
-  steps {
-    sh 'mvn clean install'
-  }
+    steps {
+      sh 'mvn clean install'
+    }
   }
 }
 }
