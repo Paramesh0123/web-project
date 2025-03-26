@@ -11,6 +11,9 @@ stages {
       sh 'mvn clean install'
     }
   }
+  stage('deploy') {
+    steps {
+      
 }
 }
   
