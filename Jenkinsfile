@@ -14,7 +14,7 @@ stages {
   stage('deploy') {
     steps {
       sshagent(['tomcat_deploy_creds']) {
-        sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war paramesh@127.0.1.1:/home/paramesh/apache-tomcat-10.1.39/webapps"
+        sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war paramesh@localhost:/home/paramesh/apache-tomcat-10.1.39/webapps"
       }
     }
   }
