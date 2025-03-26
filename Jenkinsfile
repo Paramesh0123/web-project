@@ -7,7 +7,7 @@ agent {
 stages {
   stage('checkout') {
     steps { 
-      git credentialsId: 'git_credentials', url: 'https://github.com/Paramesh0123/web-project.git', branch: 'main'
+      sh 'git clone https://github.com/Paramesh0123/web-project.git'
     }
   }
   stage('build') {
