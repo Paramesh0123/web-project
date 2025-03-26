@@ -14,7 +14,7 @@ stages {
   stage('deploy') {
     steps {
       sshagent(['deploy_creds']) {
-        sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war ubuntu@52.66.235.237:/home/paramesh/apache-tomcat-10.1.39/webapps"
+        sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war ubuntu@52.66.235.237:/home/ubuntu/apache-tomcat-10.1.39/webapps"
       }
     }
   }
