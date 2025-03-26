@@ -1,8 +1,6 @@
 pipeline {
 agent {
-  node {
-    label 'jenkins-agent-1'
-  }
+  docker { image 'rojaparamesh/agent:v1' }
 }
 stages {
   stage('checkout') {
