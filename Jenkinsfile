@@ -1,6 +1,8 @@
 pipeline {
 agent {
-  docker { image 'rojaparamesh/agent:v1' }
+  node {
+    label 'agent_template'
+  }
 }
 stages {
   stage('checkout') {
