@@ -4,7 +4,9 @@ agent any
 stages {
   stage('checkout') {
     steps { 
-      checkout-web-project()
+      script {
+        checkout-web-project()
+      }
     }
   }
   stage('build') {
