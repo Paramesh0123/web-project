@@ -5,7 +5,7 @@ stages {
   stage('checkout') {
     steps { 
       script {
-        checkout-web-project()
+        checkout_web_project()
       }
     }
   }
