@@ -1,7 +1,7 @@
 pipeline {
 agent {
   node {
-    label 'agent_template'
+    label 'jenkins_agent_1'
   }
 }
 stages {
@@ -18,7 +18,7 @@ stages {
   stage('deploy') {
     steps {
       sshagent(['deploy_creds']) {
-        sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war ubuntu@43.204.111.135:/home/ubuntu/apache-tomcat-10.1.39/webapps"
+        sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war ubuntu@3.7.46.213:/home/ubuntu/apache-tomcat-10.1.39/webapps"
       }
     }
   }
