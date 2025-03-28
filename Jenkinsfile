@@ -3,17 +3,13 @@ pipeline {
 agent any
 stages {
   stage('checkout') {
-    steps { 
-      script {
+    steps {
         checkout_web_project()
-      }
     }
   }
   stage('build') {
     steps {
-      script {
         mavenbuild()
-      }
     }
   }
   stage('deploy') {
