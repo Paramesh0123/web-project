@@ -11,7 +11,9 @@ stages {
   }
   stage('build') {
     steps {
-      mavenbuild()
+      script {
+        mavenbuild()
+      }
     }
   }
   stage('deploy') {
