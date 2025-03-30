@@ -12,7 +12,6 @@ stages {
         mavenbuild()
     }
   }
-  /*
   stage('SonarQube Analysis') {
     steps {
       withSonarQubeEnv('sonar') {
@@ -20,7 +19,6 @@ stages {
       }
     }
   }
-  */
   stage('Publish Artifacts to Jfrog Artifactory') {
     steps {
       rtUpload (
