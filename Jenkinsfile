@@ -12,6 +12,13 @@ stages {
         mavenbuild()
     }
   }
+  stage('SonarQube Analysis') {
+    steps {
+      withSonarQubeEnv('sonar') {
+        sh 'mvn sonar:sonar'
+      }
+    }
+  }
   stage('deploy') {
     steps {
       sshagent(['deploy_creds']) {
