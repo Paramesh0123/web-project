@@ -19,6 +19,21 @@ stages {
       }
     }
   }
+  stage('Publish Artifacts to Jfrog Artifactory') {
+    steps {
+      rtUpload (
+        serverId: 'jfrog',
+        spec: '''{
+              "files": [
+                 {
+                   "pattern": "target/hello-world-webapp.war",
+                   "target": "libs-release-local"
+                 }
+              ]
+        }'''
+      )
+    }
+  }  
   stage('deploy') {
     steps {
       sshagent(['deploy_creds']) {
