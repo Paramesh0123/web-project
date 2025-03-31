@@ -29,7 +29,7 @@ pipeline {
                      "target": "libs-release-local"
                    }
                 ]
-          }      
+          }'''      
         )  
       }
     }
