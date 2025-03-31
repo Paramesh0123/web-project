@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        sh 'git clone https://github.com/Paramesh0123/web-project.git'
+        sh 'git pull https://github.com/Paramesh0123/web-project.git'
       }
     }
     stage('SonarQube Analysis') {
