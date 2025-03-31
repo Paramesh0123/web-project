@@ -33,5 +33,12 @@ pipeline {
         )  
       }
     }
+    stage('Deploy to tomcat') {
+      steps {
+        sshagent(['tomcat_creds']) {
+          sh "scp -o StrictHostKeyChecking=no target/hello-world-webapp.war ubuntu@13.232.90.112:/home/ubuntu/apache-tomcat-10.1.39/webapps"
+        }
+      }
+    }
   }
 }  
