@@ -7,9 +7,10 @@ pipeline {
     stage('checkout') {
       steps {
         echo "This project will be run on ${name} Environment"
-        sh 'git pull https://github.com/Paramesh0123/web-project.git'
+       /* sh 'git pull https://github.com/Paramesh0123/web-project.git' */
       }
     }
+    /*
     stage('SonarQube Analysis') {
       steps {
         withSonarQubeEnv('sonar') {
@@ -46,3 +47,4 @@ pipeline {
     }
   }
 }  
+*/
