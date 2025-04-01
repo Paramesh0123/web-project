@@ -33,13 +33,6 @@ pipeline {
         )  
       }
     }
-    stage('Publish Build Info') {
-      steps {
-        rtPublishBuildInfo (
-          serverId: 'jfrog'
-        )
-      }
-    }
     stage('deploy') {
       steps {
         sshagent(['tomcat_creds']) {
