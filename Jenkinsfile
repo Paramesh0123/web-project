@@ -1,7 +1,7 @@
 pipeline {
   agent any
   parameters {
-    string(Env: 'Development')
+    string(name: 'Development')
   }
   stages {
     stage('checkout') {
