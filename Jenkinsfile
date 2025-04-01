@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        echo "This project will be run on $Env Environment"
+        echo "This project will be run on ${name} Environment"
         sh 'git pull https://github.com/Paramesh0123/web-project.git'
       }
     }
