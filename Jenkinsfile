@@ -33,14 +33,12 @@ pipeline {
         )  
       }
     }
-    stage('Download Artifacts to Jfrog Artifactory') {
+    stage('Publish Build Info') {
       steps {
-        rtDownload (
-          serverId: 'jfrog',
-          spec: '''{
-                "files": [
-                   {
-                     "pattern": "libs-release/hello-world-webapp.war",
-                     "target": "" 
+        rtPublishBuildInfo (
+          serverId: 'jfrog'
+        )
+      }
+    }
   }
 }  
