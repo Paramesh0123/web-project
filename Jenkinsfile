@@ -35,7 +35,7 @@ pipeline {
     }
     stage('Docker Build') {
       steps {
-          sh "sudo -S docker build -t sample-deploy ."
+          sh "docker build -t sample-deploy ."
       }
     }
   }
