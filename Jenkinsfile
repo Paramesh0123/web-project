@@ -35,7 +35,9 @@ pipeline {
     }
     stage('Docker Build') {
       steps {
-          sh "docker build -t sample-deploy ."
+        script {
+          sh 'docker build -t deploy .
+        }
       }
     }
   }
