@@ -40,5 +40,12 @@ pipeline {
         }
       }
     }
+    stage('Run the container with created image'){
+      steps {
+        script {
+          sh 'docker run -d -p 8083:8080 --name tomcat deploy'
+        }
+      }
+    }
   }
 }
